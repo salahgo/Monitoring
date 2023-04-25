@@ -64,7 +64,7 @@ réponse:
 
 réponse:
 ```
-    cd '../k8s_strategies/1 - recreate'
+    cd '../k8s_stategies/1 - recreate'
     kubectl apply -f app-v1.yaml
 ```   
 
