@@ -37,7 +37,7 @@ Une fois le chart installé vous pouvez visualisez les informations dans Lens, d
 
 Nous allons installer une petite application d’exemple en go.
 
-*   Téléchargez le code de l’application et de son déploiement depuis github: `git clone https://gitlab.com/eps_devops/k8s-deployment-strategies.git`
+*   Téléchargez le code de l’application et de son déploiement depuis github: `git clone https://github.com/salahgo/K8S-Deployment-Strategies.git`
 
 Nous allons d’abord construire l’image docker de l’application à partir des sources. Cette image doit être stockée dans le registry de minikube pour pouvoir être ensuite déployée dans le cluster. En mode développement Minikube s’interface de façon très fluide avec la ligne de commande Docker grace à quelques variable d’environnement : `minikube docker-env`
 
