@@ -49,11 +49,11 @@ réponse:
     docker system info | grep Name # devrait afficher minikube si le contexte docker est correctement défini.
 ```    
 
-*   Allez dans le dossier `goprom_app` et “construisez” l’image docker de l’application avec le tag `usernamme/goprom`.
+*   Allez dans le dossier `goprom_app` et “construisez” l’image docker de l’application avec le tag `username/goprom`.
 
 réponse:
 ```
-    cd goprom_app
+    cd K8S-Deployment-Strategies/goprom_app/
     docker build -t username/goprom .
 ```    
 
