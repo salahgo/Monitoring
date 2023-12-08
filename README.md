@@ -21,7 +21,7 @@ Installez Helm si ce n’est pas déjà fait. Sur Ubuntu : `sudo snap install he
 ```
     helm install \
       --namespace=monitoring \
-      --version=19.0.0 \
+      --version=25.8.0 \
       --set=service.type=NodePort \
       prometheus \
       prometheus-community/prometheus
@@ -37,7 +37,7 @@ Une fois le chart installé vous pouvez visualisez les informations dans Lens, d
 
 Nous allons installer une petite application d’exemple en go.
 
-*   Téléchargez le code de l’application et de son déploiement depuis github: `git clone https://github.com/salahgo/K8S-Deployment-Strategies.git`
+*   Téléchargez le code de l’application et de son déploiement depuis github: `git clone https://gitlab.com/eps_devops/k8s-deployment-strategies.git`
 
 Nous allons d’abord construire l’image docker de l’application à partir des sources. Cette image doit être stockée dans le registry de minikube pour pouvoir être ensuite déployée dans le cluster. En mode développement Minikube s’interface de façon très fluide avec la ligne de commande Docker grace à quelques variable d’environnement : `minikube docker-env`
 
@@ -49,11 +49,11 @@ réponse:
     docker system info | grep Name # devrait afficher minikube si le contexte docker est correctement défini.
 ```    
 
-*   Allez dans le dossier `goprom_app` et “construisez” l’image docker de l’application avec le tag `username/goprom`.
+*   Allez dans le dossier `goprom_app` et “construisez” l’image docker de l’application avec le tag `usernamme/goprom`.
 
 réponse:
 ```
-    cd K8S-Deployment-Strategies/goprom_app/
+    cd goprom_app
     docker build -t username/goprom .
 ```    
 
@@ -64,7 +64,7 @@ réponse:
 
 réponse:
 ```
-    cd '../k8s_stategies/1 - recreate'
+    cd '../k8s-strategies/1 - recreate'
     kubectl apply -f app-v1.yaml
 ```   
 
@@ -141,7 +141,7 @@ Ensuite, installez le chart Grafana en précisant quelques paramètres:
     helm repo update
     helm install \
       --namespace=monitoring \
-      --version=6.45.0 \
+      --version=7.0.11 \
       --set=admin.existingSecret=grafana-auth \
       --set=service.type=NodePort \
       --set=service.nodePort=32001 \
